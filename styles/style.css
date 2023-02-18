@@ -1,0 +1,20 @@
+
+.nav-item a{
+    border-radius: .7em;
+    display: flex;
+    justify-content: space-around;
+}
+.nav-item a:hover {
+    color: #046ce0;
+    background-color: #e0046c;
+    
+}
+.navSections{
+    background-color: #83B953;
+}
+.navbar{
+    background-color: #5383b9;
+}
+main{
+    background-color: #5383b9;
+}
