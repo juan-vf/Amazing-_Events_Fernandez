@@ -9,125 +9,119 @@
   <link rel="stylesheet" href="../styles/style.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
   <title>Amazing Events</title>
 </head>
 
 <body class="">
-  <div class="backgroundFilter"></div>
+  <div class="backgroundFilter position-fixed z-n1"></div>
   <header>
-    <nav class="navbar navbar-expand-md">
-      <div class="container">
-        <div class="d-flex flex-grow-1">
-          <a class="navbar-brand " href="#"><img src="../assets/images/Logo_Amazing_Events.svg" width="50" alt=""></a>
+    <div class="container-fluid d-flex flex-column">
+      <nav class="navbar navbar-expand-md bg-transparent">
+        <div class="container">
+          <div class="d-flex flex-grow-1">
+            <a class="navbar-brand " href="#"><img src="../assets/images/Logo_Amazing_Events.svg" width="50" alt=""></a>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse " id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./upcomingEvents.html">Upcoming Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./pastEvents.html">Past Events</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./stats.html">Stats</a>
+              </li>
+            </ul>
+          </div>
         </div>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="#">Home</a>
+      </nav>
+
+      <div class="d-flex justify-content-center ">
+        <figure>
+          <a href=""><img src="../assets/images/Logo_Text_Amazing_Events.svg" alt="" width="150"></a>
+        </figure>
+      </div>
+      <div class="container-fluid navSections d-flex justify-content-around">
+        <a class="align-self-center" href="./stats.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#6610F2" class="bi bi-arrow-left"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
+          </svg>
+        </a>
+        <div class="sectionTittle d-flex justify-content-center p-4">
+          <h2 id="sectionTittle">Home</h2>
+        </div>
+        <a class="align-self-center" href="./upcomingEvents.html">
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#6610F2" class="bi bi-arrow-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+              d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+          </svg>
+        </a>
+      </div>
+      <div class="finderContainer d-flex justify-content-evenly">
+
+        <div class="dropdown p-2">
+          <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Category´s
+          </button>
+          <ul class="dropdown-menu">
+            <li>
+              <input type="checkbox">
+              <label>category</label>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./upcomingEvents.html">Upcoming Events</a>
+            <li>
+              <input type="checkbox">
+              <label>category</label>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./pastEvents.html">Past Events</a>
+            <li>
+              <input type="checkbox">
+              <label>category</label>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./contact.html">Contact</a>
+            <li>
+              <input type="checkbox">
+              <label>category</label>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./stats.html">Stats</a>
+            <li>
+              <input type="checkbox">
+              <label>category</label>
             </li>
           </ul>
         </div>
+        <div class="searchContainer d-flex">
+          <input class="form-control  me-2" type="search" placeholder="Search Event" aria-label="Search">
+          <button class="btn btn-outline-success" type="submit">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+              viewBox="0 0 16 16">
+              <path
+                d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+          </button>
+        </div>
       </div>
-    </nav>
+    </div>
+
   </header>
 
-  <main>
-    <div class="d-flex justify-content-center ">
-      <figure>
-        <a href=""><img src="../assets/images/Logo_Text_Amazing_Events.svg" alt="" width="150"></a>
-      </figure>
-    </div>
-    <div class="container-fluid navSections d-flex justify-content-around">
-      <a class="align-self-center" href="./stats.html">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#6610F2" class="bi bi-arrow-left"
-          viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z" />
-        </svg>
-      </a>
-      <div class="sectionTittle d-flex justify-content-center p-4">
-        <h2 >Home</h2>
-      </div>
-      <a class="align-self-center" href="./upcomingEvents.html">
-        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="#6610F2" class="bi bi-arrow-right"
-          viewBox="0 0 16 16">
-          <path fill-rule="evenodd"
-            d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-        </svg>
-      </a>
-    </div>
-    <div class="finderContainer d-flex justify-content-evenly">
+  <main class="flex-grow-1">
 
-      <div class="dropdown p-2">
-        <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Category´s
-        </button>
-        <ul class="dropdown-menu">
-          <li>
-            <input type="checkbox">
-            <label>category</label>
-          </li>
-          <li>
-            <input type="checkbox">
-            <label>category</label>
-          </li>
-          <li>
-            <input type="checkbox">
-            <label>category</label>
-          </li>
-          <li>
-            <input type="checkbox">
-            <label>category</label>
-          </li>
-          <li>
-            <input type="checkbox">
-            <label>category</label>
-          </li>
-        </ul>
-        <!-- <form class="d-flex align-items-center justify-content-center" role="search">
-        <input type="checkbox">
-        <label>category</label>
-        <input type="checkbox">
-        <label>category</label>
-        <input type="checkbox">
-        <label>category</label>
-        <input type="checkbox">
-        <label>category</label>
-        <input class="form-control  me-2" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form> -->
-      </div>
-      <div class="searchContainer d-flex">
-        <input class="form-control  me-2" type="search" placeholder="Search Event" aria-label="Search">
-        <button class="btn btn-outline-success" type="submit">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-          </svg>
-        </button>
-      </div>
-    </div>
 
     <div>
       <article class="cardsContainer d-flex gap-2">
         <div class="card" style="width: 18rem;">
-          <img src="../assets/images/Cinema.jpg" class="card-img-top" alt="Personas en el cine">
+          <img class="cardImg card-img-top" src="../assets/images/Cinema.jpg" alt="Personas en el cine">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -145,7 +139,7 @@
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="../assets/images/Costume_Party.jpg" class="card-img-top" alt="Personas en el cine">
+          <img class="cardImg card-img-top" src="../assets/images/Costume_Party.jpg" alt="Personas en el cine">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -162,7 +156,7 @@
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="../assets/images/Marathon.jpg" class="card-img-top" alt="Personas en el cine">
+          <img class="cardImg card-img-top" src="../assets/images/Marathon.jpg" alt="Personas en el cine">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -179,7 +173,7 @@
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="../assets/images/Museum_Tour.jpg" class="card-img-top" alt="Personas en el cine">
+          <img class="cardImg card-img-top" src="../assets/images/Museum_Tour.jpg" alt="Personas en el cine">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -196,7 +190,7 @@
           </div>
         </div>
         <div class="card" style="width: 18rem;">
-          <img src="../assets/images/Music_Concert.jpg" class="card-img-top" alt="Personas en el cine">
+          <img class="cardImg card-img-top" src="../assets/images/Music_Concert.jpg" alt="Personas en el cine">
           <div class="card-body">
             <h5 class="card-title">Card title</h5>
             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
@@ -212,7 +206,7 @@
             </div>
           </div>
         </div>
-        
+
       </article>
     </div>
 
@@ -244,10 +238,12 @@
       <div class="p-2">
         <h6>FE15-TM</h6>
       </div>
+    </div>
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
     crossorigin="anonymous"></script>
+  <script src="../js/index.js"></script>
 </body>
 
 </html>

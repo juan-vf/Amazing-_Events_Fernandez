@@ -1,23 +1,20 @@
+.figureNormalize{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 body{
-    z-index: -1;
-    background: url("../assets/images/background.jpg") fixed center;
-    background-size: cover;
     display: flex;
-
-    /*vertically stack children*/
     flex-direction: column;
-
-    /* expand to take full height of page */
-    /* min-height overrides both height & max-height */
     min-height: 100vh; 
+    background: #E0046C;
+    background: linear-gradient(to top right, #E0046C 23%, #6610F2 100%);
     
 }
 .backgroundFilter{
-    z-index: -1;
-    position: fixed;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .89);
+    background: rgba(0, 0, 0, .3);
 }
 .nav-item{
     display: flex;
@@ -62,6 +59,7 @@ body{
     border-radius: .7em;
 }
 .card-body{
+    max-width: 30em;
 }
 .priceContainer{
     font-weight: bold;
@@ -83,15 +81,28 @@ body{
     -moz-box-shadow: -.01em .01em 1em .5em rgba(4,108,224,0.7);
     transform: scale(1.05);
     transition: .5s;
+    z-index: 200;
 
 }
-main{
-    flex-grow: 1;
+.cardDetail{
+    background-color: #6610F2;
+    border-radius: 1em;
+    max-width: 30em;
+    box-shadow: 0em 0em 2em .8em #e0046c;
 }
+.cardImg{
+    max-width: 100%;
+    height: 15em;
+    object-fit: cover;
+}
+/* main{
+    flex-grow: 1;
+} */
 .contacUs{
     background-color: #6610F2;
     border-radius: .5em;
     padding: .5em;
+    
     
 }
 .contactForm{
@@ -100,6 +111,9 @@ main{
     padding: 1em;
     color: #e0046c;
     text-align: center;
+    width: 50%;
+    min-width: 3em;
+    box-shadow: 0 .5em 1em 0 #e0046c;
 }
 .contactForm label{
     padding: .5em;
@@ -114,6 +128,13 @@ main{
 textarea {
     resize: none !important;
     border-radius: .6em;
+}
+
+/* stats.html */
+.contentTable{
+    /* background-color: #6610F2; */
+    background: linear-gradient(145deg, rgba(102,16,242,1) 0%, rgba(0,0,0,.1) 100%);
+    box-shadow: 0 0 1em .2em #e0046c;
 }
 .footerContainer{
     display: flex;
