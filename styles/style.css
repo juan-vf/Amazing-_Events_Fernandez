@@ -46,7 +46,7 @@ body{
     max-width: 10em;
 }
 .cardsContainer{
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     justify-content: space-evenly;
     padding: 2em;
 }
@@ -54,36 +54,84 @@ body{
     background-color: #e6c329dd !important;
     border: none !important;
     border-radius: .8em !important;
+    /* position: relative; */
+    transition: .5s;
 }
 .card img{
     border-radius: .7em;
+    transition: .85s;
 }
 .card-body{
+    /* position: absolute; */
+    /* top:50%; */
     max-width: 30em;
-}
-.priceContainer{
-    font-weight: bold;
-    background-color: rgba(108, 157, 214, 0.283);
-    display: inline-block !important;
-    border-radius: 1em;
-    padding: .5em;
-}
-.price{
-    display: flex;
-}
-.btn{
-    background-color: #e0046c !important;
-    border: none !important;
+    min-width: 10em;
+    height: auto;
+    border-radius: .8em !important;
+    transition: .8s;
+    
 }
 .card:hover{
+    position: relative;
+    /*the yellow background desappear*/
+    /* height: 15em; */
+    min-height: 20em;
+    min-width: 10em;
     box-shadow: -.01em .01em 1em .5em rgba(4,108,224,0.7);
     -webkit-box-shadow: -.01em .01em 1em .5em rgba(4,108,224,0.7);
     -moz-box-shadow: -.01em .01em 1em .5em rgba(4,108,224,0.7);
     transform: scale(1.05);
     transition: .5s;
     z-index: 200;
-
 }
+.card:hover .card-body{
+    background: rgba(40, 40, 40, .9);
+    /* justify-content: end; */
+    text-align: center;
+    /* align-items: end; */
+    /* align-content: end; */
+    position: absolute;
+    height: 0;
+    height: 100%;
+    width: 100%;
+    color: #FFF;
+}
+.card:hover #btnCard{
+    display: flex!important;
+}
+.card:hover .card-body p{
+    display: flex!important;
+}
+.card:hover img{
+    height: 100%;
+}
+.card:hover .priceContainer{
+    justify-content: center !important;
+}
+
+.priceContainer{
+    /* justify-content: center; */
+}
+.price{
+    display: inline-block !important;
+    background-color: rgba(108, 157, 214, 0.283);
+    font-weight: bold;
+    padding: .5em;
+    border-radius: 1em;
+    /* display: flex; */
+}
+.btn{
+    background-color: #e0046c !important;
+    border: none !important;
+}
+/* .card:hover{
+    box-shadow: -.01em .01em 1em .5em rgba(4,108,224,0.7);
+    -webkit-box-shadow: -.01em .01em 1em .5em rgba(4,108,224,0.7);
+    -moz-box-shadow: -.01em .01em 1em .5em rgba(4,108,224,0.7);
+    transform: scale(1.05);
+    transition: .5s;
+    z-index: 200;
+} */
 .cardDetail{
     background-color: #6610F2;
     border-radius: 1em;
