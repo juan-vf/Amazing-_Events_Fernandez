@@ -1,2 +1,4 @@
 const cardsData = data;
-renderCards(dateFilter(cardsData, 'past'), 'cardContainerPast');
+const container = 'cardContainerPast';
+let events = dateFilter(cardsData, 'past');
+renderCards(events, container);

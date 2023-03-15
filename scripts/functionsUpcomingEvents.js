@@ -1,2 +1,5 @@
 const cardsData = data;
-renderCards(dateFilter(cardsData, 'upcoming'), 'cardContainerUpcoming');
+
+const container = 'cardContainerUpcoming';
+let events = dateFilter(cardsData, 'upcoming');
+renderCards(events, container);

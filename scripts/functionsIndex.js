@@ -1,2 +1,3 @@
 const events = data.events;
-renderCards(events, 'cardContainer');
+const container = 'cardContainer'
+renderCards(events, container);

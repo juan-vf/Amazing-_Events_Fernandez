@@ -1,4 +1,4 @@
-export function filterCategorysEvents(eventsArray, category){
+function filterCategorysEvents(eventsArray, category){
     //pasarle el array de los eventos, no el objeto con currentDate y events
     let eventArray =[];
     for (const event of eventsArray) {
