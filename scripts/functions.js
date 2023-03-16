@@ -35,10 +35,10 @@ function dateFilter(objArray, date){
     let events = [];
     for (const event of objArray.events) {
         let eventDate = new Date(event.date);
-        if(date === 'past'){
+        if(date.toLowerCase() === 'past'){
             (currentDate > eventDate)?[events.push(event)]:[null];
         }
-        else if(date === 'upcoming'){
+        else if(date.toLowerCase() === 'upcoming'){
             (currentDate < eventDate)?[events.push(event)]:[null];
         }
     }

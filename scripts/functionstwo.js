@@ -1,26 +1,28 @@
-function getCategories(eventsArray) {
+async function getCategories(eventsArray) {
     let categorysArray = [];
+    let eventArrayApi = await eventsArray;
     // for (const event of eventsArray) {
     //     let category = event.category;
     //     (categorysArray.includes(category)) ? [null] : [categorysArray.push(category)];
     // }
     // let obtenerCategory = event => event.category
     // let noRepeatCategory = categorysArray.includes()
-    let obtainCategoryNoRepeat = (event) => {
-        let category = event.category;
+    let obtainCategoryNoRepeat = async (event) => {
+        let category = await event.category;
         (categorysArray.includes(category)) ? [null] : [categorysArray.push(category)];
     }
-    categoruArray = eventsArray.filter(obtainCategoryNoRepeat);
-    return categorysArray;
+    categoruArray = await eventArrayApi.filter(obtainCategoryNoRepeat);
+    return await categorysArray;
 }
 // console.log(getCategories(events))
 let arrayIdCheckbox = [];
 
-function renderCategories(categoriesArray, id) {
+async function renderCategories(categoriesArray, id) {
     let categoryContainer = document.getElementById(id)
     let categoriesHtml = '';
     let categoryId = 0;
-    for (const category of categoriesArray) {
+    let categorysArrayApi = await categoriesArray;
+    for (const category of categorysArrayApi) {
         //no stiles
         categoriesHtml += `
         <li class="" id="categoryContainer">
@@ -34,11 +36,14 @@ function renderCategories(categoriesArray, id) {
     categoryContainer.innerHTML = categoriesHtml;
     return;
 }
-renderCategories(getCategories(events), 'dropdownMenuChecks');
+renderCategoriesApi()
+async function renderCategoriesApi(){
+    const data = await getData();
+    let events = await data.events;
+    renderCategories(getCategories(events), 'dropdownMenuChecks');
+}
 
 
-let nodeListCategories = document.querySelectorAll('input[type="checkbox"]');
-let arrayCategories = Array.from(nodeListCategories).map(element => element);
 // console.log(arrayCategories);
 
 let search = document.getElementById('searchInput');
@@ -54,18 +59,22 @@ esta FUNCION REALIZA: FILTRAR LOS CHECBOX QUE ESTAN TILDADOS/TRUE/CHEQUEADOS,
 CREA UN ARRAY CON LOS NOMBRE DE LAS CATEGORIAS QUE ESTAN SIENDO FILTRADAS Y
 CREA UN ARRAY CON LOS EVENTOS QUE POSEEN IGUALDAD CON SU CATEGORIA Y LAS CATEGORIAS SELECCIONADAS
 */
-function checkFilter(array) {
+async function checkFilter(array) {
+    let arrayEventsApi = await array;
+    console.log(arrayEventsApi);
+    let nodeListCategories = await document.querySelectorAll('input[type="checkbox"]');
+    let arrayCategories = await Array.from(await nodeListCategories).map(element => element);
     let arrayCheckBoxChequeds = arrayCategories.filter(element => element.checked);//element.defaultValue para saber la categoria
     let arrayValuesCheqeds = arrayCheckBoxChequeds.map(element => element.value);
     if (arrayCheckBoxChequeds.length === 0) {
-        return array;
+        return await arrayEventsApi;
     }
-    let filteredArray = array.filter(element => arrayValuesCheqeds.includes(element.category));
+    let filteredArray = await arrayEventsApi.filter(element => arrayValuesCheqeds.includes(element.category));
     // if(filteredArray.length === 0){
     //     console.log("cero");
     //     return 0;
     // }
-    return filteredArray;
+    return await filteredArray;
 }
 function searchFilter(array, word) {
     if (word === '') {
@@ -75,10 +84,14 @@ function searchFilter(array, word) {
     return arrayFilteredWithName
 }
 
-function filterAll() {
+async function filterAll() {
+    let data = await getData();
+    let events = await data.events;
     let cardContainer = container;
-    let eventsCheckeds = checkFilter(events);
-    let evenstFind = searchFilter(eventsCheckeds, search.value.toLowerCase());
+    console.log(events);
+    let eventsCheckeds = await checkFilter(await events);
+    console.log(eventsCheckeds);
+    let evenstFind = await searchFilter(eventsCheckeds, search.value.toLowerCase());
 
     if (evenstFind.length > 0) {
         renderCards(evenstFind, container);

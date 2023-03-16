@@ -1,3 +1,7 @@
-const events = data.events;
-const container = 'cardContainer'
-renderCards(events, container);
+const container = 'cardContainer';
+renderCardsApi()
+async function renderCardsApi(){
+    const data = await getData();
+    events = await data.events;
+    renderCards(events, container);
+}

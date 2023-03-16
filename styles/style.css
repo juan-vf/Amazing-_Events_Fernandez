@@ -143,31 +143,33 @@ body{
     height: 15em;
     object-fit: cover;
 }
-/* main{
-    flex-grow: 1;
-} */
+header{
+    height: 10%;
+}
+main{
+    /* flex-grow: 1; */
+    height: 60%;
+}
+footer{
+    height: 30%;
+}
 .contacUs{
     background-color: #6610F2;
     border-radius: .5em;
     padding: .5em;
-    
-    
 }
 .contactForm{
+    width: 50%;
     border-radius: .5em;
     border: .2em solid #e0046c;
-    /* padding: 1em; */
     color: #000;
     text-align: center;
-    width: 35%;
-    /* min-width: 3em; */
     box-shadow: 0 .5em 1em 0 #e0046c;
-    min-width: 15em;
-    /* width: 10em; */
 }
 .contactForm label{
     padding: .5em;
 }
+
 .contactForm input{
     border-radius: .6em;
     border: none;
@@ -178,8 +180,9 @@ body{
 textarea {
     resize: none !important;
     border-radius: .6em;
-    min-width: 8em;
+    width: 100%;
 }
+
 
 /* stats.html */
 .contentTable{
@@ -203,3 +206,5 @@ textarea {
         flex-grow: 1 !important;
     } */
 }
+
+/* Imagenes en porcenajes */
