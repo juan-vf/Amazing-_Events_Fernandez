@@ -94,7 +94,7 @@
                         <td>Events with the lowest percentage of attendance</td>
                         <td>Events with larger capacity</td>
                     </tr>
-                    <tr>
+                    <tr id="containerEventsStatics">
                         <td></td>
                         <td></td>
                         <td></td>
@@ -107,28 +107,12 @@
                         <th  scope="col" colspan="3">Upcoming Events statics by category</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Categories</td>
-                        <td>Revenues</td>
-                        <td>Percentage of attendance</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <thead>
+                    <td>Categories</td>
+                    <td>Revenues</td>
+                    <td>Percentage of attendance</td>
+                </thead>
+                <tbody id="upComingStats">
                 </tbody>
             </table>
             <table class="contentTable table table-bordered text-white">
@@ -137,37 +121,7 @@
                         <th  scope="col" colspan="3">Past Events statics by category</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
-                        <td>Categories</td>
-                        <td>Revenues</td>
-                        <td>Percentage of attendance</td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                <tbody id="pastComingStats">
                 </tbody>
             </table>
         </div>
@@ -206,8 +160,8 @@
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous">
     </script>
-    <script src="../scripts/data.js"></script>
     <script src="../scripts/api/callApi.js"></script>
+    <script src="../scripts/functionstwo.js"></script>
     <script src="../scripts/functions.js"></script>
     <script src="../scripts/stats.js"></script>
 </body>

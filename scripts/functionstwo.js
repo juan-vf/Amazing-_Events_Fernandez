@@ -1,80 +1,69 @@
-async function getCategories(eventsArray) {
+async function categoriesApiInit() {
+    let dataEvents = await getData();
+    let events = await dataEvents.events;
+    renderCategories(getCategories(events), 'dropdownMenuChecks');
+}
+
+
+function getCategories(eventsArray) {
     let categorysArray = [];
-    let eventArrayApi = await eventsArray;
+    // let eventArrayApi = await eventsArray;
+    let eventArrayApi = eventsArray;
     // for (const event of eventsArray) {
     //     let category = event.category;
     //     (categorysArray.includes(category)) ? [null] : [categorysArray.push(category)];
     // }
     // let obtenerCategory = event => event.category
     // let noRepeatCategory = categorysArray.includes()
-    let obtainCategoryNoRepeat = async (event) => {
-        let category = await event.category;
+    let obtainCategoryNoRepeat = (event) => {
+        let category = event.category;
         (categorysArray.includes(category)) ? [null] : [categorysArray.push(category)];
     }
-    categoruArray = await eventArrayApi.filter(obtainCategoryNoRepeat);
-    return await categorysArray;
+    categoruArray = eventArrayApi.filter(obtainCategoryNoRepeat);
+    return categorysArray;
 }
-// console.log(getCategories(events))
+
 let arrayIdCheckbox = [];
 
-async function renderCategories(categoriesArray, id) {
+function renderCategories(categoriesArray, id) {
     let categoryContainer = document.getElementById(id)
     let categoriesHtml = '';
     let categoryId = 0;
-    let categorysArrayApi = await categoriesArray;
+    let categorysArrayApi = categoriesArray;
     for (const category of categorysArrayApi) {
         //no stiles
         categoriesHtml += `
-        <li class="" id="categoryContainer">
+            <li class="" id="categoryContainer">
             <input type="checkbox" class="" id="checkbox${categoryId}" value="${category}">
             <label for="checkbox${categoryId}" id="labelcheckbox${categoryId}" >${category}</label>
-        </li>
-      `;
+            </li>
+            `;
         arrayIdCheckbox.push(`checkbox${categoryId}`);
         categoryId++;
     }
     categoryContainer.innerHTML = categoriesHtml;
     return;
 }
-renderCategoriesApi()
-async function renderCategoriesApi(){
-    const data = await getData();
-    let events = await data.events;
-    renderCategories(getCategories(events), 'dropdownMenuChecks');
-}
 
 
-// console.log(arrayCategories);
-
-let search = document.getElementById('searchInput');
-let containerChecks = document.getElementById('dropdownMenuChecks')
+// let search = document.getElementById('searchInput');
+// let containerChecks = document.getElementById('dropdownMenuChecks')
 //filtar categorias
 
-let nose = search.addEventListener('keyup', filterAll);
-let eventCheck = containerChecks.addEventListener('change', filterAll);
+// let searchListener = search.addEventListener('keyup', filterAll);
+// let checkListener = containerChecks.addEventListener('change', filterAll);
 
-
-/*
-esta FUNCION REALIZA: FILTRAR LOS CHECBOX QUE ESTAN TILDADOS/TRUE/CHEQUEADOS,
-CREA UN ARRAY CON LOS NOMBRE DE LAS CATEGORIAS QUE ESTAN SIENDO FILTRADAS Y
-CREA UN ARRAY CON LOS EVENTOS QUE POSEEN IGUALDAD CON SU CATEGORIA Y LAS CATEGORIAS SELECCIONADAS
-*/
-async function checkFilter(array) {
-    let arrayEventsApi = await array;
-    console.log(arrayEventsApi);
-    let nodeListCategories = await document.querySelectorAll('input[type="checkbox"]');
-    let arrayCategories = await Array.from(await nodeListCategories).map(element => element);
+function checkFilter(array) {
+    let arrayEventsApi = array;
+    let nodeListCategories = document.querySelectorAll('input[type="checkbox"]');
+    let arrayCategories = Array.from(nodeListCategories).map(element => element);
     let arrayCheckBoxChequeds = arrayCategories.filter(element => element.checked);//element.defaultValue para saber la categoria
     let arrayValuesCheqeds = arrayCheckBoxChequeds.map(element => element.value);
     if (arrayCheckBoxChequeds.length === 0) {
-        return await arrayEventsApi;
+        return arrayEventsApi;
     }
-    let filteredArray = await arrayEventsApi.filter(element => arrayValuesCheqeds.includes(element.category));
-    // if(filteredArray.length === 0){
-    //     console.log("cero");
-    //     return 0;
-    // }
-    return await filteredArray;
+    let filteredArray = arrayEventsApi.filter(element => arrayValuesCheqeds.includes(element.category));
+    return filteredArray;
 }
 function searchFilter(array, word) {
     if (word === '') {
@@ -84,27 +73,22 @@ function searchFilter(array, word) {
     return arrayFilteredWithName
 }
 
-async function filterAll() {
-    let data = await getData();
-    let events = await data.events;
-    let cardContainer = container;
-    console.log(events);
-    let eventsCheckeds = await checkFilter(await events);
-    console.log(eventsCheckeds);
-    let evenstFind = await searchFilter(eventsCheckeds, search.value.toLowerCase());
+// async function filterAll(events) {
 
-    if (evenstFind.length > 0) {
-        renderCards(evenstFind, container);
-        return;
-    } else {
+//     let data = await getData();
+//     let events = await data.events;
+//     let cardContainer = container;
+//     let eventsCheckeds = checkFilter(events);
+//     let evenstFind = searchFilter(eventsCheckeds, search.value.toLowerCase());
+//     if (await evenstFind.length > 0) {
+//         renderCards(evenstFind, cardContainer);
+//         return;
+//     } else {
 
-        renderMessage('Search without result', container);
-    }
-}
-
-// function emptyFind(array) {
-
+//         renderMessage('Search without result', container);
+//     }
 // }
+
 function renderMessage(message, idContainer) {
     let container = document.getElementById(idContainer);
 
