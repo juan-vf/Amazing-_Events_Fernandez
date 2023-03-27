@@ -6,7 +6,7 @@ async function categoriesApiInit() {
 
 
 function getCategories(eventsArray) {
-    let categorysArray = [];
+    let categoriesArray = [];
     // let eventArrayApi = await eventsArray;
     let eventArrayApi = eventsArray;
     // for (const event of eventsArray) {
@@ -17,10 +17,10 @@ function getCategories(eventsArray) {
     // let noRepeatCategory = categorysArray.includes()
     let obtainCategoryNoRepeat = (event) => {
         let category = event.category;
-        (categorysArray.includes(category)) ? [null] : [categorysArray.push(category)];
+        (categoriesArray.includes(category)) ? [null] : [categoriesArray.push(category)];
     }
     categoruArray = eventArrayApi.filter(obtainCategoryNoRepeat);
-    return categorysArray;
+    return categoriesArray;
 }
 
 let arrayIdCheckbox = [];
@@ -29,13 +29,13 @@ function renderCategories(categoriesArray, id) {
     let categoryContainer = document.getElementById(id)
     let categoriesHtml = '';
     let categoryId = 0;
-    let categorysArrayApi = categoriesArray;
-    for (const category of categorysArrayApi) {
+    let categoriesArrayApi = categoriesArray;
+    for (const category of categoriesArrayApi) {
         //no stiles
         categoriesHtml += `
             <li class="" id="categoryContainer">
-            <input type="checkbox" class="" id="checkbox${categoryId}" value="${category}">
-            <label for="checkbox${categoryId}" id="labelcheckbox${categoryId}" >${category}</label>
+                <input type="checkbox" class="" id="checkbox${categoryId}" value="${category}">
+                <label for="checkbox${categoryId}" id="labelcheckbox${categoryId}" >${category}</label>
             </li>
             `;
         arrayIdCheckbox.push(`checkbox${categoryId}`);
