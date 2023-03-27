@@ -93,7 +93,7 @@ function renderMessage(message, idContainer) {
     let container = document.getElementById(idContainer);
 
     container.innerHTML = `
-        <div class="d-flex justify-content-center t-bold">
+        <div class="d-flex justify-content-center t-bold notFound">
             <h3>${message}</h3>
         </div>
     `

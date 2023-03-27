@@ -13,6 +13,7 @@ async function eventsStatsInit() {
     let upStatics = upComingStatics(upEvents);
 
     let pastStatics = upComingStatics(pastEvents);
+    console.log(pastEvents);
     renderUpStatics(containerUp, upStatics, upEvents, 'up');
 
     renderUpStatics(containerPast, pastStatics, pastEvents, 'past');
@@ -138,6 +139,7 @@ function upComingStatics(events) {
     // }
 
     // console.log(arrayRevenues);
+    console.log(arraySortedByCastegory);
 
 
     return arraySortedByCastegory, arrayCategories;

@@ -11,6 +11,12 @@ body{
     background: linear-gradient(to top right, #E0046C 23%, #6610F2 100%);
     
 }
+.sectionTittle{
+    color: #8989dd;
+}
+.notFound{
+    color: #8989dd;
+}
 .backgroundFilter{
     width: 100%;
     height: 100%;
@@ -134,9 +140,14 @@ body{
 } */
 .cardDetail{
     background-color: #6610F2;
+    color: #f48589;
     border-radius: 1em;
     max-width: 30em;
     box-shadow: 0em 0em 2em .8em #e0046c;
+}
+.space{
+    color: #000;
+    background-color: #8989dd;
 }
 .cardImg{
     max-width: 100%;

@@ -31,9 +31,9 @@ async function renderDetailCard(arrayCard){
     </div>
     <div class="price d-flex justify-content-around m-0 m-sm-2">
     <p class="p-0 p-sm-2 m-0 align-self-center">Price:</p>
-    <p class="p-0 p-sm-2 m-0 align-self-center">${event.price}</p>
+    <p class="p-0 p-sm-2 m-0 align-self-center">${event.price}$</p>
     </div>
-    <div class="d-flex flex-column bg-warning rounded">
+    <div class="d-flex flex-column m-2 space rounded">
     <div class="d-flex m-0 m-sm-2">
     <p class="p-0 p-sm-2 m-0 align-self-center">Place:</p>
     <p class="p-0 p-sm-2 m-0 align-self-center">${event.place}</p>
