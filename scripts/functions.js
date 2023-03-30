@@ -2,7 +2,9 @@ function renderCards(events, idString, boolean) {
     let divCardContainer = document.getElementById(idString);
     let cardHTML = '';
     let src = `../src/details.html?id=`;
-    (boolean === true)?[src = `./src/details.html`]:[null];
+    console.log(src);
+    (boolean === true)?[src = `./src/details.html?id=`]:[null];
+    console.log(src);
     for (let event of events) {
         cardHTML += `<div class="card p-0 col-12 col-sm-6 col-lg-4" style="width: 18rem;">
         <img class="cardImg card-img-top" src="${event.image}">
