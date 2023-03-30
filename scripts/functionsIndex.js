@@ -25,7 +25,7 @@ async function filterAll() {
     let eventsCheckeds = checkFilter(events);
     let evenstFind = searchFilter(eventsCheckeds, search.value.toLowerCase());
     if (await evenstFind.length > 0) {
-        renderCards(evenstFind, cardContainer);
+        renderCards(evenstFind, cardContainer, true);
         return;
     } else {
 

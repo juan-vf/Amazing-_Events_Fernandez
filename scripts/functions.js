@@ -1,6 +1,8 @@
-function renderCards(events, idString) {
+function renderCards(events, idString, boolean) {
     let divCardContainer = document.getElementById(idString);
     let cardHTML = '';
+    let src = `../src/details.html?id=`;
+    (boolean === true)?[src = `./src/details.html`]:[null];
     for (let event of events) {
         cardHTML += `<div class="card p-0 col-12 col-sm-6 col-lg-4" style="width: 18rem;">
         <img class="cardImg card-img-top" src="${event.image}">
@@ -22,7 +24,7 @@ function renderCards(events, idString) {
                 </div>
             </div>
             <div class="d-flex justify-content-end d-none" id="btnCard">
-                <a href="../src/details.html?id=${event._id}" class="btn btn-primary ">See more</a>
+                <a href="${src}${event._id}" class="btn btn-primary ">See more</a>
             </div>
         </div>
     </div>`
