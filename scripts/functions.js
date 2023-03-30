@@ -22,7 +22,7 @@ function renderCards(events, idString) {
                 </div>
             </div>
             <div class="d-flex justify-content-end d-none" id="btnCard">
-                <a href="./src/details.html?id=${event._id}" class="btn btn-primary ">See more</a>
+                <a href="../src/details.html?id=${event._id}" class="btn btn-primary ">See more</a>
             </div>
         </div>
     </div>`
